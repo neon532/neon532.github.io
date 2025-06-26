@@ -2,9 +2,9 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0 15px; /*padding poziomy 15px */
+    padding: 0 15px; /* Padding poziomy 15px */
     line-height: 1.6;
-    color: #333;
+    color: #333;  
 }
 
 /* Ustawienie stylów nagłówka głównego */
@@ -115,6 +115,10 @@ h2 {
     border-bottom: 1px solid #2F5A78;
     margin-bottom: 20px;
     margin-top: 30px;
+    word-wrap: break-word; /* Dopuszcza złamanie słowa w dowolnym miejscu, aby zmieściło się w kontenerze */
+    overflow-wrap: break-word; /* Nowoczesna alternatywa dla word-wrap */
+    white-space: normal; /* Zapewnia normalne zawijanie tekstu, nie utrzymuje go w jednej linii */
+
 }
 
 /* Ustawienie układu kolumnowego dla szerokich ekranów */
@@ -485,6 +489,67 @@ body.overlay-active footer {
     .main-header h1 {
         font-size: 24px;
     }
+
+
+@media (max-width: 576px) {
+    #kontakt h2, /* Do rozwiązania problemu z zawijaniem h2 na małych ekranach */
+    #opis h2,    /* to samo co wyżej */
+    #experience-pl h3, /* to samo co wyżej */
+    .skills-category h3,
+    .education-list h3 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    @media (max-width: 992px) {
+    /* ... inne style ... */
+    #opis {
+        margin-left: 0;
+        /* Zamiast padding-left: 0; użyj padding: 0 15px; */
+        padding: 0 15px; /* Dodano padding poziomy dla kontenera opisu */
+        width: 100%;
+        box-sizing: border-box; /* Upewnij się, że padding nie zwiększa szerokości ponad 100% */
+    }
+}
+
+#opis {
+    flex-grow: 1;
+    min-width: 400px;
+    padding-left: 15px;
+    box-sizing: border-box; /* Dodaj tę właściwość */
+}
+
+h2, h3 {
+    color: #2F5A78;
+    font-size: 20px; /* Dla h2, h3 ma 18px */
+    padding-bottom: 5px;
+    border-bottom: 1px solid #2F5A78;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    word-wrap: break-word; /* Dopuszcza złamanie słowa w dowolnym miejscu */
+    overflow-wrap: break-word; /* Nowoczesna alternatywa */
+    white-space: normal; /* Zapewnia normalne zawijanie */
+}
+
+/* Jeśli nagłówki <h3> w skills-category również mają problem: */
+.skills-category h3 {
+    font-size: 18px; /* Zgodnie z Twoim obecnym stylem */
+    color: #2F5A78;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+h3 {
+    word-wrap: break-word; /* Dla starszych przeglądarek */
+    overflow-wrap: break-word; /* Dla nowoczesnych przeglądarek */
+    white-space: normal; /* Upewnia się, że tekst się zawija */
+}
+    
 
     #language-selector {
         padding: 20px;
