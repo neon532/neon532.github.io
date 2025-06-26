@@ -1,13 +1,13 @@
-/* Ustawienie podstawowych stylów dla całej strony */
+/* Typografia globalna */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0 15px; /* Padding poziomy 15px */
+    padding: 0 15px;
     line-height: 1.6;
-    color: #333;  
+    color: #333;
 }
 
-/* Ustawienie stylów nagłówka głównego */
+/* Nagłówek główny */
 .main-header {
     text-align: center;
     background-color: #eeeeee;
@@ -21,7 +21,6 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Ustawienie stylów nagłówka h1 w nagłówku głównym */
 .main-header h1 {
     margin: 0;
     padding: 0;
@@ -107,21 +106,28 @@ body {
     display: block;
 }
 
-/* Ustawienie stylów nagłówków sekcji */
-h2 {
+/* Nagłówki sekcyjne */
+h2, h3 {
     color: #2F5A78;
-    font-size: 20px;
     padding-bottom: 5px;
-    border-bottom: 1px solid #2F5A78;
     margin-bottom: 20px;
     margin-top: 30px;
-    word-wrap: break-word; /* Dopuszcza złamanie słowa w dowolnym miejscu, aby zmieściło się w kontenerze */
-    overflow-wrap: break-word; /* Nowoczesna alternatywa dla word-wrap */
-    white-space: normal; /* Zapewnia normalne zawijanie tekstu, nie utrzymuje go w jednej linii */
-
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
-/* Ustawienie układu kolumnowego dla szerokich ekranów */
+h2 {
+    font-size: 20px;
+    border-bottom: 1px solid #2F5A78;
+}
+
+h3 {
+    font-size: 18px;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* Układ główny */
 #mojeDane {
     display: flex;
     padding: 0 10px;
@@ -131,7 +137,7 @@ h2 {
     flex-wrap: nowrap;
 }
 
-/* Stylizacja sekcji ze zdjęciem i nazwą stanowiska */
+/* Informacje profilowe */
 .profile-info {
     flex-shrink: 0;
     flex-basis: 150px;
@@ -140,7 +146,6 @@ h2 {
     padding-top: 10px;
 }
 
-/* Stylizacja zdjęcia profilowego */
 .profile-info img {
     width: 100px;
     height: 100px;
@@ -152,12 +157,10 @@ h2 {
     transition: transform 1.5s ease;
 }
 
-/* Powiększenie zdjęcia profilowego po najechaniu */
 .profile-info img:hover {
     transform: scale(1.5);
 }
 
-/* Stylizacja etykiety stanowiska */
 #position-pl {
     font-size: 18px;
     font-weight: bold;
@@ -166,7 +169,7 @@ h2 {
     text-align: center;
 }
 
-/* Stylizacja sekcji kontaktowej */
+/* Dane kontaktowe */
 #kontakt {
     flex-shrink: 0;
     flex-basis: 250px;
@@ -177,172 +180,142 @@ h2 {
     padding-top: 10px;
 }
 
-/* Stylizacja listy kontaktowej */
 #kontakt ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Odstępy między pozycjami kontaktowymi */
 #kontakt ul li {
     margin-bottom: 5px;
 }
 
-/* Stylizacja linków kontaktowych */
 #kontakt ul li a {
     color: #2F5A78;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Zmiana koloru linku po najechaniu */
 #kontakt ul li a:hover {
     color: #e99f4b;
     text-decoration: underline;
 }
 
-/* Stylizacja sekcji opisu (np. doświadczenie, umiejętności) */
+/* Opis szczegółowy */
 #opis {
     flex-grow: 1;
     min-width: 400px;
     padding-left: 15px;
+    box-sizing: border-box;
 }
 
-/* Stylizacja podsumowania */
+/* Podsumowanie */
 .summary {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 25px;
 }
 
-/* Stylizacja nagłówków pozycji doświadczenia */
+/* Doświadczenie zawodowe */
 #experience-pl li h3 {
-    font-size: 18px;
-    color: #2F5A78;
     margin-bottom: 5px;
     margin-top: 15px;
 }
 
-/* Stylizacja opisów doświadczenia */
 #experience-pl li p {
     font-size: 15px;
     margin-bottom: 10px;
     color: #333;
 }
 
-/* Stylizacja list zadań w doświadczeniu */
 #experience-pl li ul {
     list-style: disc;
     margin-left: 20px;
     margin-bottom: 20px;
 }
 
-/* Stylizacja punktów listy zadań */
 #experience-pl li ul li {
     margin-bottom: 5px;
     line-height: 1.4;
 }
 
-/* Stylizacja kategorii umiejętności */
+/* Umiejętności */
 .skills-category {
     margin-bottom: 25px;
 }
 
-/* Stylizacja nagłówków umiejętności */
-.skills-category h3 {
-    font-size: 18px;
-    color: #2F5A78;
-    margin-bottom: 10px;
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 5px;
-}
-
-/* Stylizacja listy umiejętności */
 .skills-category ul {
     list-style: disc;
     padding-left: 20px;
     margin: 0;
 }
 
-/* Stylizacja pozycji na liście umiejętności */
 .skills-category ul li {
     margin-bottom: 8px;
     line-height: 1.5;
     color: #333;
 }
 
-/* Wyróżnienie ważnych słów w umiejętnościach */
 .skills-category ul li strong {
     color: #2F5A78;
 }
 
-/* Stylizacja listy wykształcenia */
+/* Edukacja */
 .education-list {
     list-style: disc;
     padding-left: 20px;
     margin: 0;
 }
 
-/* Stylizacja pozycji listy wykształcenia */
 .education-list li {
     margin-bottom: 15px;
 }
 
-/* Stylizacja nagłówków w edukacji */
 .education-list li h3 {
-    font-size: 16px;
-    color: #2F5A78;
     margin-bottom: 3px;
 }
 
-/* Stylizacja opisów edukacji */
 .education-list li p {
     font-size: 14px;
     color: #555;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
 }
 
-/* Stylizacja listy certyfikatów */
+/* Certyfikaty */
 .certificates-list {
     list-style: disc;
     margin-left: 20px;
     padding: 0;
 }
 
-/* Stylizacja pozycji listy certyfikatów */
 .certificates-list li {
     margin-bottom: 8px;
     line-height: 1.5;
     color: #333;
 }
 
-/* Wyróżnienie certyfikatów */
 .certificates-list li strong {
     color: #2F5A78;
 }
 
-/* Stylizacja listy języków */
+/* Języki */
 .languages-list {
     list-style: disc;
     padding-left: 20px;
     margin: 0;
 }
 
-/* Stylizacja pozycji listy języków */
 .languages-list li {
     margin-bottom: 8px;
     line-height: 1.5;
     color: #333;
 }
 
-/* Wyróżnienie nazw języków */
 .languages-list li strong {
     color: #2F5A78;
 }
 
-/* Stylizacja formularza kontaktowego */
+/* Formularz kontaktowy */
 #kontaktform {
     margin: 30px auto;
     max-width: 600px;
@@ -352,7 +325,6 @@ h2 {
     background-color: #f9f9f9;
 }
 
-/* Stylizacja nagłówka formularza kontaktowego */
 #kontaktform h2 {
     text-align: center;
     border-bottom: 1px solid #2F5A78;
@@ -360,7 +332,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Stylizacja kontenera formularza */
 #contact-form-pl {
     display: flex;
     flex-direction: column;
@@ -369,7 +340,6 @@ h2 {
     margin: 0 auto;
 }
 
-/* Stylizacja etykiet formularza */
 #contact-form-pl label {
     font-weight: bold;
     color: #2F5A78;
@@ -377,7 +347,6 @@ h2 {
     align-self: flex-start;
 }
 
-/* Stylizacja pól tekstowych formularza */
 #contact-form-pl input[type='text'],
 #contact-form-pl input[type='email'],
 #contact-form-pl textarea {
@@ -389,13 +358,11 @@ h2 {
     border-radius: 5px;
 }
 
-/* Stylizacja pola tekstowego wieloliniowego */
 #contact-form-pl textarea {
     min-height: 100px;
     resize: vertical;
 }
 
-/* Stylizacja przycisku wysyłania formularza */
 #contact-form-pl input[type='submit'] {
     background-color: #2F5A78;
     border: none;
@@ -408,12 +375,11 @@ h2 {
     margin-top: 15px;
 }
 
-/* Powiększenie przycisku po najechaniu */
 #contact-form-pl input[type='submit']:hover {
     transform: scale(1.1);
 }
 
-/* Stylizacja stopki strony */
+/* Stopka */
 footer {
     background-color: #eeeeee;
     margin-top: 35px;
@@ -423,25 +389,22 @@ footer {
     box-sizing: border-box;
 }
 
-/* Przyklejenie stopki przy aktywnej nakładce */
 body.overlay-active footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
     z-index: 2001;
     background-color: #eeeeee;
     padding: 10px 0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
-/* Stylizacja treści stopki */
 #copyright {
     margin: 0;
     color: #555;
     font-size: 14px;
 }
 
-/* Ustawienie responsywności dla ekranów do 992px */
+/* Responsywność – średnie ekrany */
 @media (max-width: 992px) {
     #mojeDane {
         flex-direction: column;
@@ -473,83 +436,28 @@ body.overlay-active footer {
         gap: 10px;
     }
 
-    #kontakt h2 {
-        text-align: center;
-    }
-
     #opis {
         margin-left: 0;
-        padding-left: 0;
+        padding: 0 15px;
         width: 100%;
+        box-sizing: border-box;
     }
 }
 
-/* Ustawienie responsywności dla ekranów do 576px */
+/* Responsywność – małe ekrany */
 @media (max-width: 576px) {
     .main-header h1 {
         font-size: 24px;
     }
 
-
-@media (max-width: 576px) {
-    #kontakt h2, /* Do rozwiązania problemu z zawijaniem h2 na małych ekranach */
-    #opis h2,    /* to samo co wyżej */
-    #experience-pl h3, /* to samo co wyżej */
+    h2, h3,
+    #experience-pl h3,
     .skills-category h3,
     .education-list h3 {
         word-wrap: break-word;
         overflow-wrap: break-word;
         white-space: normal;
     }
-
-    @media (max-width: 992px) {
-    /* ... inne style ... */
-    #opis {
-        margin-left: 0;
-        /* Zamiast padding-left: 0; użyj padding: 0 15px; */
-        padding: 0 15px; /* Dodano padding poziomy dla kontenera opisu */
-        width: 100%;
-        box-sizing: border-box; /* Upewnij się, że padding nie zwiększa szerokości ponad 100% */
-    }
-}
-
-#opis {
-    flex-grow: 1;
-    min-width: 400px;
-    padding-left: 15px;
-    box-sizing: border-box; /* Dodaj tę właściwość */
-}
-
-h2, h3 {
-    color: #2F5A78;
-    font-size: 20px; /* Dla h2, h3 ma 18px */
-    padding-bottom: 5px;
-    border-bottom: 1px solid #2F5A78;
-    margin-bottom: 20px;
-    margin-top: 30px;
-    word-wrap: break-word; /* Dopuszcza złamanie słowa w dowolnym miejscu */
-    overflow-wrap: break-word; /* Nowoczesna alternatywa */
-    white-space: normal; /* Zapewnia normalne zawijanie */
-}
-
-/* Jeśli nagłówki <h3> w skills-category również mają problem: */
-.skills-category h3 {
-    font-size: 18px; /* Zgodnie z Twoim obecnym stylem */
-    color: #2F5A78;
-    margin-bottom: 10px;
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 5px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-}
-
-h3 {
-    word-wrap: break-word; /* Dla starszych przeglądarek */
-    overflow-wrap: break-word; /* Dla nowoczesnych przeglądarek */
-    white-space: normal; /* Upewnia się, że tekst się zawija */
-}
-    
 
     #language-selector {
         padding: 20px;
