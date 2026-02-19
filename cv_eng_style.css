@@ -1,14 +1,14 @@
-/* Typografia globalna */
+/* Global Typography */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0 15px;
     line-height: 1.6;
     color: #333;
-    padding-top: 80px; /* Miejsce na fixed header */
+    padding-top: 80px; /* Space for fixed header */
 }
 
-/* Nagłówek główny */
+/* Main Header */
 .main-header {
     text-align: center;
     background-color: #eeeeee;
@@ -29,7 +29,7 @@ body {
     text-transform: uppercase;
 }
 
-/* Nawigacja (Strzałka wstecz) */
+/* Navigation (Back Arrow) */
 .top-nav {
     position: fixed;
     top: 20px;
@@ -53,7 +53,7 @@ body {
     color: white;
 }
 
-/* Nagłówki sekcyjne */
+/* Section Headers */
 h2, h3 {
     color: #2F5A78;
     padding-bottom: 5px;
@@ -71,8 +71,8 @@ h3 {
     border-bottom: 1px dashed #ccc;
 }
 
-/* Układ główny */
-#mojeDane {
+/* Main Layout */
+#myData {
     display: flex;
     width: 100%;
     box-sizing: border-box;
@@ -98,40 +98,40 @@ h3 {
     transform: scale(1.5);
 }
 
-/* Dane kontaktowe */
-#kontakt {
+/* Contact Data */
+#contact {
     flex-basis: 250px;
     border-right: 3px solid rgb(13, 74, 114);
     padding-right: 25px;
     margin-right: 15px;
 }
 
-#kontakt ul {
+#contact ul {
     list-style: none;
     padding: 0;
 }
 
-#kontakt ul li {
+#contact ul li {
     margin-bottom: 8px;
 }
 
-#kontakt ul li a {
+#contact ul li a {
     color: #2F5A78;
     text-decoration: none;
 }
 
-#kontakt ul li a:hover {
+#contact ul li a:hover {
     color: #e99f4b;
     text-decoration: underline;
 }
 
-/* Opis szczegółowy */
-#opis {
+/* Detailed Description */
+#description {
     flex-grow: 1;
     padding-left: 15px;
 }
 
-/* Listy w doświadczeniu i umiejętnościach */
+/* Lists in Experience and Skills */
 ul {
     list-style: disc;
     margin-left: 20px;
@@ -141,8 +141,8 @@ ul {
     margin-bottom: 25px;
 }
 
-/* Formularz kontaktowy */
-#kontaktform {
+/* Contact Form */
+#contactform {
     margin: 30px auto;
     max-width: 600px;
     padding: 20px;
@@ -151,19 +151,19 @@ ul {
     background-color: #f9f9f9;
 }
 
-#contact-form-pl {
+#contact-form-en {
     display: flex;
     flex-direction: column;
 }
 
-#contact-form-pl input, #contact-form-pl textarea {
+#contact-form-en input, #contact-form-en textarea {
     border: 1px solid #2F5A78;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
 }
 
-#contact-form-pl input[type='submit'] {
+#contact-form-en input[type='submit'] {
     background-color: #2F5A78;
     color: white;
     cursor: pointer;
@@ -171,13 +171,13 @@ ul {
     transition: transform 0.3s;
 }
 
-#contact-form-pl input[type='submit']:hover {
+#contact-form-en input[type='submit']:hover {
     transform: scale(1.05);
 }
 
-/* Responsywność */
+/* Responsiveness */
 @media (max-width: 992px) {
-    #mojeDane { flex-direction: column; align-items: center; }
-    #kontakt { border-right: none; border-bottom: 3px solid #2F5A78; padding: 0; text-align: center; width: 100%; }
-    #kontakt ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    #myData { flex-direction: column; align-items: center; }
+    #contact { border-right: none; border-bottom: 3px solid #2F5A78; padding: 0; text-align: center; width: 100%; }
+    #contact ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 }
