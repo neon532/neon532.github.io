@@ -2,31 +2,105 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wybierz język / Choose Language</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .selector { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
-        ul { list-style: none; padding: 0; display: flex; gap: 20px; justify-content: center; }
-        img { width: 80px; cursor: pointer; transition: transform 0.3s; border: 2px solid transparent; border-radius: 8px; }
-        img:hover { transform: scale(1.1); border-color: #2F5A78; }
-        h2 { color: #2F5A78; margin-bottom: 30px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #f4f4f4; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .selector { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            text-align: center; 
+            min-width: 350px;
+        }
+        ul { 
+            list-style: none; 
+            padding: 0; 
+            display: flex; 
+            gap: 25px; 
+            justify-content: center; 
+            margin-top: 20px;
+        }
+        img { 
+            width: 80px; 
+            height: auto;
+            cursor: pointer; 
+            transition: transform 0.3s, border-color 0.3s; 
+            border: 2px solid transparent; 
+            border-radius: 8px; 
+        }
+        img:hover { 
+            transform: scale(1.15); 
+            border-color: #2F5A78; 
+        }
+        h2 { 
+            color: #2F5A78; 
+            margin-bottom: 30px; 
+            font-size: 24px;
+            min-height: 1.2em; /* Zapobiega "skakaniu" zawartości przy zmianie tekstu */
+        }
     </style>
 </head>
 <body>
+
     <div class="selector">
-        <h2 id="title">Wybierz język / Choose language</h2>
+        <h2 id="language-title">Wybierz język</h2>
+        
         <ul>
-            <li><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg" onclick="setLang('pol')" alt="PL"></li>
-            <li><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" onclick="setLang('eng')" alt="EN"></li>
-            <li><img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" onclick="setLang('ita')" alt="IT"></li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg" 
+                     alt="PL" 
+                     onmouseover="changeText('pl')" 
+                     onclick="setLang('pol')">
+            </li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" 
+                     alt="EN" 
+                     onmouseover="changeText('en')" 
+                     onclick="setLang('eng')">
+            </li>
+            <li>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" 
+                     alt="IT" 
+                     onmouseover="changeText('it')" 
+                     onclick="setLang('ita')">
+            </li>
         </ul>
     </div>
 
     <script>
+        const translations = {
+            'pl': 'Wybierz język',
+            'en': 'Choose language',
+            'it': 'Scegli lingua'
+        };
+
+        const titleElement = document.getElementById('language-title');
+
+        // Funkcja zmieniająca tekst po najechaniu myszką
+        function changeText(lang) {
+            titleElement.textContent = translations[lang];
+        }
+
+        // Funkcja ustawiająca język i przekierowująca
         function setLang(lang) {
             localStorage.setItem('userLang', lang);
             window.location.href = 'cv_' + lang + '.html';
         }
+
+        // Opcjonalnie: przywrócenie domyślnego tekstu po zjechaniu myszką z flag
+        document.querySelector('ul').addEventListener('mouseleave', () => {
+            titleElement.textContent = translations['pl']; // Lub zostaw ostatnio wybrany
+        });
     </script>
 </body>
 </html>
