@@ -1,15 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("CV w języku polskim wczytane poprawnie.");
+    console.log("English CV loaded successfully.");
 
-    // Obsługa wysyłania formularza
-    const contactForm = document.getElementById('contact-form-pl');
+    // Form submission handling
+    const contactForm = document.getElementById('contact-form-en');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function() {
-            
-            console.log("Formularz został wysłany.");
+            console.log("The form has been sent.");
         });
     }
-
-    
 });
