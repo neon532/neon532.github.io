@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrabble Helper - Szczegóły</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- BAZA I TŁO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+
+        .back-btn:hover { color: #00d4ff; }
+
+        /* --- KONTENER GŁÓWNY --- */
+        .app-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- NAGŁÓWEK: TYTUŁ I IKONA --- */
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .game-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            object-fit: cover;
+        }
+
+        /* --- PRZYCISK POBIERANIA --- */
+        .download-btn {
+            display: inline-block;
+            background: #01875f;
+            color: white;
+            text-decoration: none;
+            padding: 12px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.3s;
+            width: fit-content;
+        }
+
+        .download-btn:hover { background: #019e6f; }
+
+        /* --- ZRZUTY EKRANU --- */
+        .screenshots-container {
+            margin: 20px 0 40px 0;
+        }
+
+        .screenshots-wrapper {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 15px;
+        }
+
+        .screenshots-wrapper::-webkit-scrollbar { height: 6px; }
+        .screenshots-wrapper::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
+        .screenshots-wrapper::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
+
+        .screenshot-item {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 350px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            object-fit: cover;
+        }
+
+        /* --- OPIS I TREŚĆ --- */
+        .description-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+        }
+
+        .description-text h2 {
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+
+        .description-text h3 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+            color: #00d4ff;
+        }
+
+        .description-text p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .description-text ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #94a3b8;
+        }
+
+        .description-text li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: rgba(1, 135, 95, 0.1);
+            padding: 20px;
+            border-left: 4px solid #01875f;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        strong { color: #fff; }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .game-header { flex-direction: column-reverse; align-items: center; text-align: center; }
+            .header-left { align-items: center; }
+            h1 { font-size: 2rem; }
+            .app-content { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <a href="app_gallery_pol.html" class="back-btn">← Powrót do App Store</a>
+    
+    <div class="app-content">
+        <header class="game-header">
+            <div class="header-left">
+                <h1>Scrabble Helper</h1>
+                <a href="https://github.com/neon532/Android-apps/releases/download/application/Scrabble_Helper.apk" class="download-btn">
+                    Zainstaluj
+                </a>
+            </div>
+            <img src="scrabble_helper_ico.png" alt="Scrabble Helper" class="game-icon">
+        </header>
+
+        <section class="screenshots-container">
+            <div class="screenshots-wrapper">
+                <img src="screenshot_scrabble_helper_1.png" alt="Screen 1" class="screenshot-item">
+                <img src="screenshot_scrabble_helper_2.png" alt="Screen 2" class="screenshot-item">
+                <img src="screenshot_scrabble_helper_3.png" alt="Screen 3" class="screenshot-item">
+                <img src="screenshot_scrabble_helper_4.png" alt="Screen 4" class="screenshot-item">
+                <img src="screenshot_scrabble_helper_5.png" alt="Screen 5" class="screenshot-item">
+                <img src="screenshot_scrabble_helper_6.png" alt="Screen 6" class="screenshot-item">
+                <img src="screenshot_scrabble_helper_7.png" alt="Screen 7" class="screenshot-item">
+            </div>
+        </section>
+
+        <section class="description-section">
+    <div class="description-text">
+        <p><strong>Odblokuj swój pełny potencjał w grach słownych dzięki Scrabble Helper – najbardziej zaawansowanej i intuicyjnej wyszukiwarce słów dla amatorów i mistrzów!</strong></p>
+
+        <p>Głowisz się nad słowem, które da Ci zwycięstwo? Twoja stojaczka jest pełna trudnych liter? <strong>Scrabble Helper</strong> powstał, aby wynieść Twoją grę na wyższy poziom. Niezależnie od tego, czy grasz w Scrabble, Literaki, czy inne układanki słowne, nasza aplikacja zapewnia błyskawiczne rozwiązania i strategiczne wskazówki, które pozwolą Ci przechytrzyć każdego przeciwnika.</p>
+
+        <h2>DLACZEGO WARTO WYBRAĆ SCRABBLE HELPER?</h2>
+        <p>W przeciwieństwie do zwykłych wyszukiwarek, nasza aplikacja opiera się na zaawansowanych algorytmach, które nie tylko znajdują słowa, ale również <strong>uczą Cię grać lepiej</strong>. To potężne narzędzie działające całkowicie w trybie offline, dające Ci dostęp do najlepszych słowników zawsze i wszędzie.</p>
+
+        <div class="highlight-box">
+            <h2>UNIKALNA STRATEGIA WYMIANY</h2>
+            <p>Utknąłeś z samymi samogłoskami lub rzadkimi spółgłoskami? Nasz unikalny algorytm <strong>"Exchange Strategy"</strong> analizuje Twoje litery i podpowiada dokładnie, które z nich powinieneś wymienić, aby maksymalnie zwiększyć swoje szanse w następnej turze.</p>
+        </div>
+
+        <h3>KLUCZOWE FUNKCJE:</h3>
+        <ul>
+            <li><strong>Potężny Generator Anagramów:</strong> Wpisz swoje litery, a nasz silnik błyskawicznie stworzy listę wszystkich możliwych słów, posortowaną według długości i wartości punktowej.</li>
+            <li><strong>Inteligentna Integracja z Planszą:</strong> Nie ograniczaj się tylko do swoich liter! Wprowadź znaki już obecne na planszy, a aplikacja pokaże Ci, jak „zakotwiczyć” swoje płytki, by zdobyć rekordową liczbę punktów.</li>
+            <li><strong>Profesjonalne Słowniki:</strong> Obsługujemy kompleksowe i aktualne słowniki dla języka polskiego oraz angielskiego. Graj z pewnością, że każde słowo jest dopuszczalne.</li>
+            <li><strong>Prywatność 100% Offline:</strong> Twoje dane zostają na urządzeniu. Aplikacja nie wymaga internetu do wyszukiwania haseł, co czyni ją szybką, niezawodną i dyskretną.</li>
+        </ul>
+
+        <h3>ROZWIJAJ SWOJE SŁOWNICTWO</h3>
+        <p>Scrabble Helper to nie tylko wygrywanie – to narzędzie edukacyjne. Odkrywaj słowa, o których istnieniu nie miałeś pojęcia i wzbogacaj swój język przy każdym wyszukiwaniu. To idealny sposób na trening przed turniejem lub po prostu lepszą zabawę z rodziną i przyjaciółmi.</p>
+
+        <h3>MINIMALISTYCZNY I SZYBKI INTERFEJS</h3>
+        <p>Zaprojektowana z myślą o użytkowniku, aplikacja posiada czysty, nowoczesny interfejs. Żadnego chaosu, żadnych zbędnych kroków – tylko słowa, których potrzebujesz, dokładnie wtedy, gdy ich szukasz.</p>
+
+        <h3>JAK UŻYWAĆ – KROK PO KROKU:</h3>
+        <ol>
+            <li>Wybierz preferowany język (<strong>Polski</strong> lub <strong>Angielski</strong>).</li>
+            <li>Wprowadź litery ze swojej tabliczki.</li>
+            <li>(Opcjonalnie) Wpisz litery z planszy, z którymi chcesz połączyć swoje słowo.</li>
+            <li>Przejrzyj wyniki i wybierz najlepszy ruch!</li>
+        </ol>
+
+        <p>Przestań zgadywać i zacznij wygrywać. <strong>Pobierz Scrabble Helper już dziś i zostań mistrzem słowa, którym zawsze chciałeś być!</strong></p>
+    </div>
+</section>
+    </div>
+</body>
+</html>
