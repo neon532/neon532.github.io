@@ -1,3 +1,4 @@
+
 /* Typografia globalna */
 body {
     font-family: Arial, sans-serif;
@@ -5,6 +6,7 @@ body {
     padding: 0 15px;
     line-height: 1.6;
     color: #333;
+    padding-top: 80px; /* Miejsce na fixed header */
 }
 
 /* Nagłówek główny */
@@ -23,87 +25,33 @@ body {
 
 .main-header h1 {
     margin: 0;
-    padding: 0;
     font-size: 32px;
     color: #2F5A78;
     text-transform: uppercase;
 }
 
-/* Wyświetlenie nakładki wyboru języka */
-#language-overlay {
+/* Nawigacja (Strzałka wstecz) */
+.top-nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
 }
 
-/* Ustawienie kontenera wyboru języka */
-#language-selector {
-    background-color: #ffffff;
-    padding: 30px 40px;
-    border: 2px solid #2F5A78;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    margin-top: 60px;
-}
-
-/* Stylizacja nagłówka sekcji wyboru języka */
-#language-selector h2 {
-    font-size: 24px;
+.back-arrow {
+    text-decoration: none;
     color: #2F5A78;
-    margin-bottom: 25px;
-    border-bottom: none;
+    font-weight: bold;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #2F5A78;
+    transition: all 0.3s;
 }
 
-/* Wyśrodkowanie i rozmieszczenie listy języków */
-#language-selector ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-/* Stylizacja flag jako przycisków języków */
-#language-selector li img {
-    width: 60px;
-    height: auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Powiększenie flagi po najechaniu */
-#language-selector li img:hover {
-    transform: scale(1.15);
-}
-
-/* Ukrycie sekcji językowej domyślnie */
-.language-section {
-    display: none;
-    padding-top: 80px;
-    padding-bottom: 20px;
-}
-
-/* Wyświetlenie sekcji językowej po aktywacji */
-.language-section.active {
-    display: block !important;
-}
-
-/* Wymuszenie wyświetlenia przy wczytaniu */
-.language-section.active-on-load {
-    display: block;
+.back-arrow:hover {
+    background: #2F5A78;
+    color: white;
 }
 
 /* Nagłówki sekcyjne */
@@ -112,9 +60,6 @@ h2, h3 {
     padding-bottom: 5px;
     margin-bottom: 20px;
     margin-top: 30px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
 }
 
 h2 {
@@ -130,20 +75,15 @@ h3 {
 /* Układ główny */
 #mojeDane {
     display: flex;
-    padding: 0 10px;
     width: 100%;
     box-sizing: border-box;
     align-items: flex-start;
-    flex-wrap: nowrap;
 }
 
-/* Informacje profilowe */
 .profile-info {
-    flex-shrink: 0;
     flex-basis: 150px;
     text-align: center;
     margin-right: 20px;
-    padding-top: 10px;
 }
 
 .profile-info img {
@@ -152,8 +92,6 @@ h3 {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #2F5A78;
-    display: block;
-    margin: 0 auto 10px auto;
     transition: transform 1.5s ease;
 }
 
@@ -161,39 +99,26 @@ h3 {
     transform: scale(1.5);
 }
 
-#position-pl {
-    font-size: 18px;
-    font-weight: bold;
-    color: #2F5A78;
-    margin-top: 0;
-    text-align: center;
-}
-
 /* Dane kontaktowe */
 #kontakt {
-    flex-shrink: 0;
     flex-basis: 250px;
     border-right: 3px solid rgb(13, 74, 114);
     padding-right: 25px;
     margin-right: 15px;
-    box-sizing: border-box;
-    padding-top: 10px;
 }
 
 #kontakt ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 #kontakt ul li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 #kontakt ul li a {
     color: #2F5A78;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 #kontakt ul li a:hover {
@@ -204,115 +129,17 @@ h3 {
 /* Opis szczegółowy */
 #opis {
     flex-grow: 1;
-    min-width: 400px;
     padding-left: 15px;
-    box-sizing: border-box;
 }
 
-/* Podsumowanie */
-.summary {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Doświadczenie zawodowe */
-#experience-pl li h3 {
-    margin-bottom: 5px;
-    margin-top: 15px;
-}
-
-#experience-pl li p {
-    font-size: 15px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-#experience-pl li ul {
+/* Listy w doświadczeniu i umiejętnościach */
+ul {
     list-style: disc;
     margin-left: 20px;
-    margin-bottom: 20px;
 }
 
-#experience-pl li ul li {
-    margin-bottom: 5px;
-    line-height: 1.4;
-}
-
-/* Umiejętności */
-.skills-category {
+.skills-category, .education-list li {
     margin-bottom: 25px;
-}
-
-.skills-category ul {
-    list-style: disc;
-    padding-left: 20px;
-    margin: 0;
-}
-
-.skills-category ul li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-    color: #333;
-}
-
-.skills-category ul li strong {
-    color: #2F5A78;
-}
-
-/* Edukacja */
-.education-list {
-    list-style: disc;
-    padding-left: 20px;
-    margin: 0;
-}
-
-.education-list li {
-    margin-bottom: 15px;
-}
-
-.education-list li h3 {
-    margin-bottom: 3px;
-}
-
-.education-list li p {
-    font-size: 14px;
-    color: #555;
-    margin: 0;
-}
-
-/* Certyfikaty */
-.certificates-list {
-    list-style: disc;
-    margin-left: 20px;
-    padding: 0;
-}
-
-.certificates-list li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-    color: #333;
-}
-
-.certificates-list li strong {
-    color: #2F5A78;
-}
-
-/* Języki */
-.languages-list {
-    list-style: disc;
-    padding-left: 20px;
-    margin: 0;
-}
-
-.languages-list li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-    color: #333;
-}
-
-.languages-list li strong {
-    color: #2F5A78;
 }
 
 /* Formularz kontaktowy */
@@ -325,175 +152,33 @@ h3 {
     background-color: #f9f9f9;
 }
 
-#kontaktform h2 {
-    text-align: center;
-    border-bottom: 1px solid #2F5A78;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
 #contact-form-pl {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    margin: 0 auto;
 }
 
-#contact-form-pl label {
-    font-weight: bold;
-    color: #2F5A78;
-    margin-bottom: 5px;
-    align-self: flex-start;
-}
-
-#contact-form-pl input[type='text'],
-#contact-form-pl input[type='email'],
-#contact-form-pl textarea {
+#contact-form-pl input, #contact-form-pl textarea {
     border: 1px solid #2F5A78;
-    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    box-sizing: border-box;
     border-radius: 5px;
-}
-
-#contact-form-pl textarea {
-    min-height: 100px;
-    resize: vertical;
 }
 
 #contact-form-pl input[type='submit'] {
     background-color: #2F5A78;
-    border: none;
-    border-radius: 7px;
-    padding: 10px 25px;
-    font-weight: bold;
     color: white;
     cursor: pointer;
-    transition: transform 1s ease;
-    margin-top: 15px;
+    font-weight: bold;
+    transition: transform 0.3s;
 }
 
 #contact-form-pl input[type='submit']:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* Stopka */
-footer {
-    background-color: #eeeeee;
-    margin-top: 35px;
-    text-align: center;
-    padding: 20px 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-body.overlay-active footer {
-    position: fixed;
-    bottom: 0;
-    z-index: 2001;
-    background-color: #eeeeee;
-    padding: 10px 0;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-}
-
-#copyright {
-    margin: 0;
-    color: #555;
-    font-size: 14px;
-}
-
-/* Responsywność – średnie ekrany */
+/* Responsywność */
 @media (max-width: 992px) {
-    #mojeDane {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-info {
-        margin: 20px auto 10px auto;
-        flex-basis: auto;
-        width: 100%;
-    }
-
-    #kontakt {
-        flex-basis: auto;
-        width: 90%;
-        border-right: none;
-        border-bottom: 3px solid rgb(13, 74, 114);
-        padding-right: 0;
-        margin-right: 0;
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        text-align: center;
-    }
-
-    #kontakt ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    #opis {
-        margin-left: 0;
-        padding: 0 15px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-
-/* Responsywność – małe ekrany */
-@media (max-width: 576px) {
-    .main-header h1 {
-        font-size: 24px;
-    }
-
-    h2, h3,
-    #experience-pl h3,
-    .skills-category h3,
-    .education-list h3 {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-    }
-
-    #language-selector {
-        padding: 20px;
-    }
-
-    #language-selector h2 {
-        font-size: 20px;
-    }
-
-    #language-selector li img {
-        width: 40px;
-    }
-
-    .profile-info img {
-        width: 80px;
-        height: 80px;
-    }
-
-    #position-pl {
-        font-size: 16px;
-    }
-
-    #kontakt ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
-
-    #kontaktform {
-        margin: 20px 10px;
-        padding: 15px;
-    }
-
-    #contact-form-pl input[type='text'],
-    #contact-form-pl input[type='email'],
-    #contact-form-pl textarea {
-        padding: 8px;
-    }
+    #mojeDane { flex-direction: column; align-items: center; }
+    #kontakt { border-right: none; border-bottom: 3px solid #2F5A78; padding: 0; text-align: center; width: 100%; }
+    #kontakt ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 }
