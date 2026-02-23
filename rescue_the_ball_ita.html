@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescue The Ball - Dettagli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- BAZA I TŁO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background: #0f172a;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+        .back-btn:hover { color: #00d4ff; }
+        .app-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .game-icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            object-fit: cover;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #01875f;
+            color: white;
+            text-decoration: none;
+            padding: 12px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.3s;
+            width: fit-content;
+        }
+        .download-btn:hover { background: #019e6f; }
+        .screenshots-container { margin: 20px 0 40px 0; }
+        .screenshots-wrapper {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 15px;
+        }
+        .screenshot-item {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 350px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            object-fit: cover;
+        }
+        .description-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+        }
+        .description-text h2 {
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+        .description-text h3 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+            color: #00d4ff;
+        }
+        .description-text p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .description-text ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #94a3b8;
+        }
+        .description-text li { margin-bottom: 10px; }
+        .highlight-box {
+            background: rgba(1, 135, 95, 0.1);
+            padding: 20px;
+            border-left: 4px solid #01875f;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        strong { color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <a href="app_gallery_pol.html" class="back-btn">← Torna all'App Store</a>
+    
+    <div class="app-content">
+        <header class="game-header">
+            <div class="header-left">
+                <h1>Rescue The Ball</h1>
+                <a href="#" class="download-btn">Installa</a>
+            </div>
+            <img src="rescue_the_ball_ico.jpg" alt="Rescue The Ball Icon" class="game-icon">
+        </header>
+
+        <section class="description-section">
+            <div class="description-text">
+                <p><strong>Sei pronto per la prova definitiva di riflessi, precisione e tempismo strategico?</strong></p>
+
+                <p>Benvenuto in <strong>Rescue The Ball</strong> — un gioco arcade ad alta intensità progettato per spingere al limite la tua coordinazione occhio-mano. In un mondo dove la gravità è il tuo peggior nemico e la velocità la tua costante compagna, sopravvivono solo i giocatori più abili. La tua missione è semplice: mantieni le palline in gioco, sopravvivi al caos crescente e scala la classifica globale per diventare una vera leggenda.</p>
+
+                <h2>ESSENZA DEL GAMEPLAY</h2>
+                <p><strong>Rescue The Ball</strong> prende la formula classica arcade e la arricchisce con una fisica moderna e un’estetica neon elegante. Controlli una pala energetica avanzata nella parte inferiore dello schermo. Dall’alto cadono sfere con frequenza crescente e traiettorie imprevedibili. Il tuo obiettivo è respingerle e impedire che precipitino nel vuoto.</p>
+
+                <p>Non lasciarti ingannare dalla semplicità delle prime fasi. Quello che inizia come una danza ritmica si trasforma rapidamente in una frenetica lotta per la sopravvivenza. Con il progresso aumentano il numero delle palline, la loro velocità e la complessità delle collisioni basate sulla fisica.</p>
+
+                <h2>MECCANICA UNICA DI RALLENTAMENTO DEL TEMPO</h2>
+                <div class="highlight-box">
+                    <p>Nel pieno dell’azione hai un’arma segreta: <strong>Impulso Slow-Motion</strong>. Salvando con successo le palline, la barra “Slow-Mo” si carica. Una volta attivata, il tempo si piega alla tua volontà. Il mondo rallenta, dandoti la lucidità necessaria per pianificare le prossime mosse o gestire il caos dopo le collisioni. Padroneggiare il rallentamento del tempo è la chiave per punteggi leggendari.</p>
+                </div>
+
+                <h3>FUNZIONALITÀ PRINCIPALI:</h3>
+                <ul>
+                    <li><strong>100 Livelli di Sfida:</strong> Ogni livello aumenta la velocità delle palline.</li>
+                    <li><strong>Motore Fisico Avanzato:</strong> Quantità di moto e collisioni realistiche — le palline interagiscono tra loro.</li>
+                    <li><strong>Difficoltà Dinamica:</strong> Più punti ottieni, più ti avvicini a una <strong>“Vita Extra”</strong>.</li>
+                    <li><strong>Personalizzazione Completa:</strong> Regola l’altezza della pala nelle impostazioni.</li>
+                    <li><strong>Competizione Globale:</strong> Integrazione completa con <strong>Google Play Games</strong>.</li>
+                </ul>
+
+                <h3>CONSIGLI STRATEGICI:</h3>
+                <ul>
+                    <li>Conserva lo <strong>Slow-Mo</strong> per i momenti critici.</li>
+                    <li>La costanza è fondamentale: ogni soglia superata può ridarti vite perse.</li>
+                    <li>Osserva attentamente le collisioni in aria: le traiettorie cambiano istantaneamente!</li>
+                </ul>
+
+                <h3>PAROLA DELL’AUTORE:</h3>
+                <p>Rescue The Ball nasce dalla passione per i classici arcade. Ho dedicato innumerevoli ore a perfezionare la fisica affinché ogni vittoria fosse davvero soddisfacente. È un gioco di crescita, concentrazione e del piacere di superare i propri record.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
