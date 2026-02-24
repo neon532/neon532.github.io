@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Mie Applicazioni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- STILE DI BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* --- INTESTAZIONE (LOGO E NOME) --- */
+        .dev-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .dev-logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .dev-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- DESCRIZIONE ATTIVITÀ --- */
+        .dev-description {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 60px;
+            line-height: 1.6;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        /* --- LISTA APPLICAZIONI --- */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .app-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .app-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.03);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .app-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* Responsività per mobile */
+        @media (max-width: 600px) {
+            .dev-header { flex-direction: column; text-align: center; }
+            .dev-title { font-size: 1.5rem; }
+        }
+        .back-btn { position: absolute; top: 20px; left: 20px; color: white; text-decoration: none; font-size: 1.2rem; z-index: 10; }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <a href="cv_ita.html" class="back-btn">← Torna al CV</a>
+
+    <div class="container">
+        <header class="dev-header">
+            <img src="dev_awatar.png" class="dev-logo-img" alt="Avatar">
+            <h1 class="dev-title">App Android di Gutkowski Developer</h1>
+        </header>
+
+        <section class="dev-description" style="max-width: 900px; margin: 0 auto; font-family: Arial, sans-serif; line-height: 1.8;">
+
+            <p>
+                Sono un <strong>ingegnere e programmatore</strong> che unisce la precisione tecnica alla creazione di moderne applicazioni mobili.
+                La mia esperienza professionale comprende la <strong>modellazione avanzata 3D BIM (Tekla Structures)</strong>,
+                la progettazione di documentazione tecnica e il lavoro analitico nel reparto ricerca e sviluppo.
+                Lavorare in un ambiente ingegneristico mi ha insegnato il <strong>pensiero sistemico</strong>, l'attenzione ai dettagli
+                e la progettazione di soluzioni conformi a rigorosi requisiti tecnici.
+            </p>
+
+            <h3 style="margin-top: 35px; font-size: 22px;">
+                Competenze di programmazione
+            </h3>
+
+            <p>
+                Parallelamente, mi sto evolvendo come <strong>software developer</strong>.
+                Sviluppo competenze in <strong>JavaScript, Python, Kotlin</strong> e lavoro con <strong>SQL</strong>.
+                Mi interessa l'applicazione dell'<strong>intelligenza artificiale</strong> nei prodotti digitali –
+                dall'elaborazione dei dati all'integrazione di soluzioni basate su <strong>LLM</strong> e machine learning.
+            </p>
+
+            <h3 style="margin-top: 35px; font-size: 22px;">
+                Progetti mobili
+            </h3>
+
+            <p>
+                Creo applicazioni per Android, principalmente giochi e strumenti di utilità.
+                I miei progetti includono:
+            </p>
+
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li>un gioco arcade con integrazione Google Play Games,</li>
+                <li>un'applicazione per supportare la ricerca di parole,</li>
+                <li>un gioco da tavolo multiplayer con meccanica di lancio dei dadi.</li>
+            </ul>
+
+            <p>
+                Tratto ogni progetto come una combinazione di <strong>architettura tecnica</strong>,
+                <strong>logica di sistema</strong> e <strong>esperienza utente (UX)</strong>.
+            </p>
+
+            <div style="margin-top: 30px; padding: 20px; background-color: rgba(1, 135, 95, 0.1); border-left: 4px solid #01875f;">
+                <strong>
+                    Costruisco soluzioni strutturalmente ponderate,
+                    logicamente ottimizzate e visivamente curate.
+                </strong>
+            </div>
+
+        </section>
+
+        <main class="apps-grid">
+            <a href="rescue_the_ball_ita.html" class="app-card">
+                <img src="rescue_the_ball_ico.jpg" class="app-icon" alt="Rescue The Ball">
+                <span class="app-name">Rescue The Ball</span>
+            </a>
+            <a href="scrabble_helper_ita.html" class="app-card">
+                <img src="scrabble_helper_ico.png" alt="Scrabble Helper" class="app-icon">
+                <span class="app-name">Scrabble Helper</span>
+            </a>
+
+            <a href="snake_rush_ita.html" class="app-card">
+                <img src="snake_rush_ico.png" alt="Snake Rush" class="app-icon">
+                <span class="app-name">Snake Rush</span>
+            </a>
+        </main>
+    </div>
+
+    <script> 
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let w, h;
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        const lines = Array.from({ length: 10 }, () => ({
+            y: Math.random() * h,
+            speed: 0.5 + Math.random() * 1,
+            amplitude: 40 + Math.random() * 80,
+            offset: Math.random() * 100,
+            color: Math.random() > 0.5 ? 'rgba(0, 212, 255, 0.12)' : 'rgba(157, 0, 255, 0.12)'
+        }));
+
+        function drawLasers() {
+            ctx.clearRect(0, 0, w, h);
+            ctx.lineWidth = 1.2;
+            
+            lines.forEach((line) => {
+                ctx.beginPath();
+                ctx.strokeStyle = line.color;
+                ctx.moveTo(0, line.y);
+                for (let x = 0; x < w; x += 3) {
+                    const y = line.y + Math.sin(x * 0.0015 + line.offset) * line.amplitude;
+                    ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+                line.offset += 0.005;
+            });
+            requestAnimationFrame(drawLasers);
+        }
+        drawLasers(); 
+    </script>
+</body>
+</html>
