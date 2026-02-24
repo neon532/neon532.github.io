@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Applications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- BASE STYLING --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* --- HEADER (LOGO & NAME) --- */
+        .dev-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .dev-logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .dev-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- PROFESSIONAL DESCRIPTION --- */
+        .dev-description {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 60px;
+            line-height: 1.6;
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        /* --- APPLICATIONS LIST --- */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .app-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .app-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.03);
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .app-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 600px) {
+            .dev-header { flex-direction: column; text-align: center; }
+            .dev-title { font-size: 1.5rem; }
+        }
+        .back-btn { position: absolute; top: 20px; left: 20px; color: white; text-decoration: none; font-size: 1.2rem; z-index: 10; }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <a href="cv_en.html" class="back-btn">← Back to CV</a>
+
+    <div class="container">
+        <header class="dev-header">
+            <img src="dev_awatar.png" class="dev-logo-img">
+            <h1 class="dev-title">Android Apps by Gutkowski Developer</h1>
+        </header>
+
+        <section class="dev-description" style="max-width: 900px; margin: 0 auto; font-family: Arial, sans-serif; line-height: 1.8;">
+
+            <p>
+                I am an <strong>engineer and programmer</strong> who combines technical precision with the creation of modern mobile applications. 
+                My professional experience includes advanced <strong>3D BIM modeling (Tekla Structures)</strong>, 
+                designing technical documentation, and analytical work in a research and development department. 
+                Working in an engineering environment has taught me <strong>systems thinking</strong>, attention to detail, 
+                and designing solutions that meet rigorous technical requirements.
+            </p>
+
+            <h3 style="margin-top: 35px; font-size: 22px;">
+                Programming Competencies
+            </h3>
+
+            <p>
+                In parallel, I am evolving as a <strong>software developer</strong>. 
+                I am developing skills in <strong>JavaScript, Python, Kotlin</strong>, as well as working with <strong>SQL</strong>. 
+                I am interested in the application of <strong>artificial intelligence</strong> in digital products – 
+                from data processing to the integration of solutions based on <strong>LLMs</strong> and machine learning.
+            </p>
+
+            <h3 style="margin-top: 35px; font-size: 22px;">
+                Mobile Projects
+            </h3>
+
+            <p>
+                I create Android applications, primarily games and utility tools. 
+                My projects include:
+            </p>
+
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li>An arcade game with Google Play Games integration,</li>
+                <li>An application supporting word searches,</li>
+                <li>A multiplayer board game with dice-roll mechanics.</li>
+            </ul>
+
+            <p>
+                I treat every project as a fusion of <strong>technical architecture</strong>, 
+                <strong>system logic</strong>, and <strong>user experience</strong>.
+            </p>
+
+            <div style="margin-top: 30px; padding: 20px; background-color: rgba(1, 135, 95, 0.1); border-left: 4px solid #01875f;">
+                <strong>
+                    I build solutions that are structurally well-thought-out, 
+                    logically optimized, and visually refined.
+                </strong>
+            </div>
+
+        </section>
+
+        <main class="apps-grid">
+            <a href="rescue_the_ball_en.html" class="app-card">
+                <img src="rescue_the_ball_ico.jpg" class="app-icon">
+                <span class="app-name">Rescue The Ball</span>
+            </a>
+            <a href="scrabble_helper_en.html" class="app-card">
+                <img src="scrabble_helper_ico.png" alt="Icon" class="app-icon">
+                <span class="app-name">Scrabble Helper</span>
+            </a>
+
+            <a href="snake_rush_en.html" class="app-card">
+                <img src="snake_rush_ico.png" alt="Icon" class="app-icon">
+                <span class="app-name">Snake Rush</span>
+            </a>
+        </main>
+    </div>
+
+    <script> 
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let w, h;
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        const lines = Array.from({ length: 10 }, () => ({
+            y: Math.random() * h,
+            speed: 0.5 + Math.random() * 1,
+            amplitude: 40 + Math.random() * 80,
+            offset: Math.random() * 100,
+            color: Math.random() > 0.5 ? 'rgba(0, 212, 255, 0.12)' : 'rgba(157, 0, 255, 0.12)'
+        }));
+
+        function drawLasers() {
+            ctx.clearRect(0, 0, w, h);
+            ctx.lineWidth = 1.2;
+            
+            lines.forEach((line) => {
+                ctx.beginPath();
+                ctx.strokeStyle = line.color;
+                ctx.moveTo(0, line.y);
+                for (let x = 0; x < w; x += 3) {
+                    const y = line.y + Math.sin(x * 0.0015 + line.offset) * line.amplitude;
+                    ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+                line.offset += 0.005;
+            });
+            requestAnimationFrame(drawLasers);
+        }
+        drawLasers(); 
+    </script>
+</body>
+</html>
