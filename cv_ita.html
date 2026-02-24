@@ -205,23 +205,22 @@ e continuo a sviluppare la conoscenza delle lingue:
 <section id="contact-form">
 <h2>Modulo di contatto</h2>
 
-<form>
-    <label for="name">Nome e cognome</label>
-    <input type="text" id="name" name="name">
-
-    <label for="email">Indirizzo e-mail</label>
-    <input type="email" id="email" name="email">
-
-    <label for="message">Messaggio</label>
-    <textarea id="message" name="message"></textarea>
-
-    <button type="submit">Invia messaggio</button>
+<form id="contact-form-pl" action="https://formspree.io/f/xrbkoqkb" method="POST">
+                    <label for="name-pl">Nome e cognome: </label>
+                    <input placeholder="Imię" id="name-pl" type="text" name="Imię" required /><br>
+                    <label for="email-pl">Indirizzo e-mail: </label>
+                    <input placeholder="Email" id="email-pl" type="email" name="_replyto" required /><br>
+                    <textarea placeholder="Messaggio" name="Messaggio" required></textarea><br>
+                    <input type="Invia messaggio" value="Invia messaggio" class="m-auto btn btn-primary">
 </form>
 
-</section>
 
+    
+            </article>
         </section>
     </main>
 
+    <script src="cv_script.js"></script>
 </body>
 </html>
+
